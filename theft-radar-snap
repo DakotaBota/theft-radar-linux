@@ -1,0 +1,5 @@
+#!/bin/bash
+for B in $SNAP/bin/chromium chromium chromium-browser google-chrome-stable google-chrome; do
+  if command -v "$B" >/dev/null 2>&1; then exec "$B" --app=https://theftradar.pro "$@"; fi
+done
+xdg-open https://theftradar.pro

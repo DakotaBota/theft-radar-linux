@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=TheftRadar
+Comment=National stolen property register
+Exec=theft-radar
+Icon=theft-radar
+Type=Application
+Categories=Utility;Network;

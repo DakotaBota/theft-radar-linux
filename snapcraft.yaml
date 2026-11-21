@@ -1,0 +1,24 @@
+name: theft-radar
+base: core22
+version: '1.0.0'
+summary: TheftRadar — national stolen property register
+description: |
+  Report stolen items free. Search the national stolen-property register,
+  browse the live theft map, get neighborhood alerts, and build police-ready
+  evidence packets. Opens TheftRadar in a dedicated app window.
+grade: stable
+confinement: strict
+
+apps:
+  theft-radar:
+    command: bin/theft-radar
+    plugs: [network, desktop, desktop-legacy, x11, wayland]
+
+parts:
+  launcher:
+    plugin: dump
+    source: .
+    organize:
+      theft-radar-snap: bin/theft-radar
+      theft-radar.desktop: usr/share/applications/theft-radar.desktop
+      theft-radar.png: usr/share/icons/hicolor/512x512/apps/theft-radar.png
