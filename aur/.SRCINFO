@@ -1,0 +1,16 @@
+pkgbase = theft-radar
+pkgname = theft-radar
+pkgver = 1.0.0
+pkgrel = 1
+pkgdesc = TheftRadar — national stolen property register
+arch = any
+url = https://theftradar.pro
+license = MIT
+depends = chromium
+depends = xdg-utils
+source = theft-radar.desktop::https://raw.githubusercontent.com/DakotaBota/theft-radar-linux/main/theft-radar.desktop
+source = theft-radar.png::https://raw.githubusercontent.com/DakotaBota/theft-radar-linux/main/theft-radar.png
+source = launcher::https://raw.githubusercontent.com/DakotaBota/theft-radar-linux/main/theft-radar-snap
+md5sums = SKIP
+md5sums = SKIP
+md5sums = SKIP

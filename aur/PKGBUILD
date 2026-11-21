@@ -1,0 +1,17 @@
+pkgname=theft-radar
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="TheftRadar — national stolen property register"
+arch=('any')
+url="https://theftradar.pro"
+license=('MIT')
+depends=('chromium' 'xdg-utils')
+source=("$pkgname.desktop::https://raw.githubusercontent.com/DakotaBota/theft-radar-linux/main/theft-radar.desktop"
+        "$pkgname.png::https://raw.githubusercontent.com/DakotaBota/theft-radar-linux/main/theft-radar.png"
+        "launcher::https://raw.githubusercontent.com/DakotaBota/theft-radar-linux/main/theft-radar-snap")
+md5sums=('SKIP' 'SKIP' 'SKIP')
+package() {
+  install -Dm755 "$srcdir/launcher" "$pkgdir/usr/bin/theft-radar"
+  install -Dm644 "$srcdir/$pkgname.desktop" "$pkgdir/usr/share/applications/theft-radar.desktop"
+  install -Dm644 "$srcdir/$pkgname.png" "$pkgdir/usr/share/icons/hicolor/512x512/apps/$pkgname.png"
+}

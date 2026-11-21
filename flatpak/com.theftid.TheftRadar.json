@@ -1,0 +1,30 @@
+{
+  "id": "pro.theftradar.TheftRadar",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "23.08",
+  "sdk": "org.freedesktop.Sdk//23.08",
+  "command": "theft-radar",
+  "finish-args": [
+    "--share=network",
+    "--share=ipc",
+    "--socket=x11",
+    "--socket=wayland",
+    "--device=dri"
+  ],
+  "modules": [
+    {
+      "name": "theft-radar",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm755 theft-radar-snap /app/bin/theft-radar",
+        "install -Dm644 theft-radar.desktop /app/share/applications/theft-radar.desktop",
+        "install -Dm644 theft-radar.png /app/share/icons/hicolor/512x512/apps/theft-radar.png"
+      ],
+      "sources": [
+        {"type": "file", "path": "theft-radar-snap"},
+        {"type": "file", "path": "theft-radar.desktop"},
+        {"type": "file", "path": "theft-radar.png"}
+      ]
+    }
+  ]
+}
